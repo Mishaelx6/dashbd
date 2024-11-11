@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen">
+
+    <!-- Mobile Header -->
+    <header class="md:hidden flex justify-between items-center p-4 bg-white shadow-md">
+      <div class="flex items-center">
+        <img src="https://mail.google.com/mail/u/0?ui=2&ik=f0c553c2f4&attid=0.1.1&permmsgid=msg-f:1807541722274417423&th=1915ad9ea0dd4b0f&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-64th_mHQF6eCRb9yQt1MxJ7BenUHi0XtCkZ68E4h6UGV2BEi0SeJMgQMjiqcK0UAIjMpbnIIElziQ3Km0YYZ7G9kUAj-XpfNDv6ZUzqnlvFer26TLK52JWys&disp=emb" alt="Dashboard Logo" class="max-w-[70px] max-h-[70px]">
+      </div>
+      <div>
+          <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+              <i class="fa-solid fa-bars fa-2x"></i>
+          </button>
+      </div>
+  </header>
+
+    <div class="flex h-full">
+        <!-- Sidebar -->
+        <div id="sidebar" class="hidden fixed md:flex w-[200px] bg-white text-gray-800 flex-col h-screen z-10">
+            <!-- Logo -->
+            <div class="hidden md:flex justify-center items-center p-4 mt-4">
+                <img src="https://mail.google.com/mail/u/0?ui=2&ik=f0c553c2f4&attid=0.1.1&permmsgid=msg-f:1807541722274417423&th=1915ad9ea0dd4b0f&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-64th_mHQF6eCRb9yQt1MxJ7BenUHi0XtCkZ68E4h6UGV2BEi0SeJMgQMjiqcK0UAIjMpbnIIElziQ3Km0YYZ7G9kUAj-XpfNDv6ZUzqnlvFer26TLK52JWys&disp=emb" alt="Dashboard Logo" class="max-w-[70px] max-h-[70px]">
+            </div>
+            <!-- Navigation Links -->
+            <nav class="flex-grow p-4">
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-tachometer-alt mr-3"></i> Dashboard
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-calendar-alt mr-3"></i> Timetable
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-bullhorn mr-3"></i> Notice board
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-dollar-sign mr-3"></i> School Fees
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-images mr-3"></i> Class Gallery
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-graduation-cap mr-3"></i> Academic Result
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-sign-out-alt mr-3"></i> Log out
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-8 flex-grow md:ml-[200px] flex flex-col">
+            <!-- Header for Desktop -->
+            <header class="flex  md:flex p-4 justify-between items-center ">
+              <div class="flex items-center">
+                  <div class="relative">
+                      <div class="flex items-center ml-[20px_0_0_0">
+                          <div class="relative w-full sm:w-auto">
+                              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                  <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+                              </span>
+                              <input type="text" placeholder="Search..." class="w-full sm:w-auto p-2 sm:p-1 pl-10 sm:pl-8 rounded border border-gray-300 focus:outline-none focus:border-indigo-500 sm:text-sm">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Icons and Profile Image -->
+              <div class="flex items-center space-x-4 ml-auto">
+                  <div class="relative">
+                      <i class="fa-regular fa-bell text-gray-600 cursor-pointer"></i>
+                      <span class="absolute top-0 right-0 block w-2.5 h-2.5 bg-red-500 rounded-full ring-2 ring-white"></span>
+                  </div>
+                  <i class="fa-regular fa-cog text-gray-600 cursor-pointer"></i>
+                  <div class="flex items-center space-x-4">
+                      <div class="w-8 h-8 rounded-full overflow-hidden">
+                          <img src="https://via.placeholder.com/150" alt="Profile Image" class="w-full h-full object-cover">
+                      </div>
+                      <div class="flex flex-col">
+                          <span class="font-bold">User Name</span>
+                          <span class="text-sm text-gray-600">example@gmail.com</span>
+                      </div>
+                  </div>
+              </div>
+          </header> 
+
+            <!-- Content Area -->
+            <div class="p-6">
+                <div class="m-[0_2px_44px_2px] flex self-start box-sizing-border">
+                  <span class="break-words font-['Nunito_Sans'] font-[var(--new-project-22-desktop-body-feature-bold-font-weight,700)] text-[24px] leading-[var(--new-project-22-desktop-body-feature-bold-line-height,1.2)] text-[#000000]">
+                  Timetable
+                  </span>
+                </div>
+                <div class="rounded-[12px] bg-[#FFFFFF] m-[0_14px_0_0] flex flex-col items-center p-[31.5px_61.9px_13.9px_44px] w-[fit-content] box-sizing-border">
+                  <div class="m-[0_0_21.4px_54.8px] flex flex-row justify-between w-[844px] box-sizing-border">
+                    <span class="m-[0_5.5px_0_0] w-[21px] break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    8AM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    8:30AM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    9AM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    9:30AM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    10AM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    10:30AM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    11AM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    11:30AM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    12:00PM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    12:30PM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    1:00PM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    1:30PM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    2:00PM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    2:30PM
+                    </span>
+                    <span class="break-words font-['Sora'] font-normal text-[9px] text-[#0A0A0B]">
+                    3:00PM
+                    </span>
+                  </div>
+                  <div class="relative m-[0_1.5px_0_0] flex h-[538.4px] box-sizing-border">
+                    <div class="relative flex flex-col items-center box-sizing-border">
+                      <div class="m-[0_0px_45.9px_0] flex flex-row w-[fit-content] box-sizing-border">
+                        <div class="m-[30.1px_32.4px_30.1px_0] inline-block break-words font-['Sora'] font-semibold text-[10.3px] tracking-[-0.2px] text-[#0A0A0B]">
+                        MON
+                        </div>
+                        <div class="flex flex-row box-sizing-border">
+                          <div class="flex flex-row box-sizing-border">
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                          </div>
+                          <div class="rounded-[2.6px] bg-[var(--colors-yellow,#FFCC00)] m-[0_0_0.2px_0] flex p-[31px_0.5px_31px_0] w-[93px] box-sizing-border">
+                            <span class="break-words font-['Nunito_Sans'] font-normal text-[9px] leading-[1.2] text-[#0A0A0B]">
+                            Break
+                            </span>
+                          </div>
+                          <div class="flex flex-row box-sizing-border">
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="flex flex-row box-sizing-border">
+                              <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_15.5px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                                <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                                B slot
+                                </div>
+                                <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                                Code
+                                </div>
+                                <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                                Course Name
+                                </span>
+                              </div>
+                              <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                                <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                                B slot
+                                </div>
+                                <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                                Code
+                                </div>
+                                <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                                Course Name
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="m-[0_0_45.9px_0] flex flex-row w-[fit-content] box-sizing-border">
+                        <div class="m-[30.1px_39.9px_30.1px_0] inline-block break-words font-['Sora'] font-semibold text-[10.3px] tracking-[-0.2px] text-[#0A0A0B]">
+                        TUE
+                        </div>
+                        <div class="flex flex-row box-sizing-border">
+                          <div class="flex flex-row box-sizing-border">
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                          </div>
+                          <div class="rounded-[2.6px] bg-[var(--colors-yellow,#FFCC00)] m-[0_0_0.2px_0] flex p-[31px_0.5px_31px_0] w-[93px] box-sizing-border">
+                            <span class="break-words font-['Nunito_Sans'] font-normal text-[9px] leading-[1.2] text-[#0A0A0B]">
+                            Break
+                            </span>
+                          </div>
+                          <div class="flex flex-row box-sizing-border">
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_0_15.5px_15.5px] w-[201.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              T slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="self-start break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="m-[0_0_45.9px_0] flex flex-row w-[fit-content] box-sizing-border">
+                        <div class="m-[30.1px_35px_30.1px_0] inline-block break-words font-['Sora'] font-semibold text-[10.3px] tracking-[-0.2px] text-[#0A0A0B]">
+                        WED
+                        </div>
+                        <div class="flex flex-row box-sizing-border">
+                          <div class="flex flex-row box-sizing-border">
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                          </div>
+                          <div class="rounded-[2.6px] bg-[var(--colors-yellow,#FFCC00)] m-[0_0_0.2px_0] flex p-[31px_0.5px_31px_0] w-[93px] box-sizing-border">
+                            <span class="break-words font-['Nunito_Sans'] font-normal text-[9px] leading-[1.2] text-[#0A0A0B]">
+                            Break
+                            </span>
+                          </div>
+                          <div class="flex flex-row box-sizing-border">
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_0_15.5px_15.5px] w-[201.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              T slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="self-start break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex flex-row w-[fit-content] box-sizing-border">
+                        <div class="m-[30.1px_37.7px_30.1px_0] inline-block break-words font-['Sora'] font-semibold text-[10.3px] tracking-[-0.2px] text-[#0A0A0B]">
+                        THU
+                        </div>
+                        <div class="flex flex-row box-sizing-border">
+                          <div class="flex flex-row box-sizing-border">
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                          </div>
+                          <div class="rounded-[2.6px] bg-[var(--colors-yellow,#FFCC00)] m-[0_0_0.2px_0] flex p-[31px_0.5px_31px_0] w-[93px] box-sizing-border">
+                            <span class="break-words font-['Nunito_Sans'] font-normal text-[9px] leading-[1.2] text-[#0A0A0B]">
+                            Break
+                            </span>
+                          </div>
+                          <div class="flex flex-row box-sizing-border">
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              B slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                            <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_0_15.5px_15.5px] w-[201.5px] box-sizing-border">
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                              T slot
+                              </div>
+                              <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                              Code
+                              </div>
+                              <span class="self-start break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                              Course Name
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="absolute left-[0px] right-[0px] bottom-[0px] flex flex-row justify-between box-sizing-border">
+                      <div class="m-[30.1px_43.9px_30.1px_0] inline-block break-words font-['Sora'] font-semibold text-[10.3px] tracking-[-0.2px] text-[#0A0A0B]">
+                      FRI
+                      </div>
+                      <div class="flex flex-row grow basis-[842px] box-sizing-border">
+                        <div class="flex flex-row box-sizing-border">
+                          <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                            B slot
+                            </div>
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                            Code
+                            </div>
+                            <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                            Course Name
+                            </span>
+                          </div>
+                          <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                            B slot
+                            </div>
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                            Code
+                            </div>
+                            <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                            Course Name
+                            </span>
+                          </div>
+                          <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                            B slot
+                            </div>
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                            Code
+                            </div>
+                            <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                            Course Name
+                            </span>
+                          </div>
+                          <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                            B slot
+                            </div>
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                            Code
+                            </div>
+                            <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                            Course Name
+                            </span>
+                          </div>
+                        </div>
+                        <div class="rounded-[2.6px] bg-[var(--colors-yellow,#FFCC00)] m-[0_0_0.2px_0] flex p-[31px_0.5px_31px_0] w-[93px] box-sizing-border">
+                          <span class="break-words font-['Nunito_Sans'] font-normal text-[9px] leading-[1.2] text-[#0A0A0B]">
+                          Break
+                          </span>
+                        </div>
+                        <div class="flex flex-row box-sizing-border">
+                          <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] m-[0_20.7px_0_0] flex flex-col p-[15.5px_12.6px_15.5px_15.5px] box-sizing-border">
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                            B slot
+                            </div>
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                            Code
+                            </div>
+                            <span class="break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                            Course Name
+                            </span>
+                          </div>
+                          <div class="rounded-[2.6px] bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))] flex flex-col p-[15.5px_0_15.5px_15.5px] w-[201.5px] box-sizing-border">
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-normal text-[8px] text-[var(--white-50,#F2F2F2)]">
+                            T slot
+                            </div>
+                            <div class="m-[0_0_2.6px_0] inline-block self-start break-words font-['Sora'] font-bold text-[12px] text-[var(--white-70,#F7F7F7)]">
+                            Code
+                            </div>
+                            <span class="self-start break-words font-['Inter'] font-medium text-[10px] text-[var(--white-30,#EDEDED)]">
+                            Course Name
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="absolute top-[118.1px] right-[304.8px] flex p-[0_0_0_9.9px] box-sizing-border">
+                      <div class="shadow-[5.3px_7.5px_30.1px_0px_rgba(0,0,0,0.1)] rounded-[4.5px] bg-[#FFFFFF] relative flex flex-col p-[5.3px_0.8px_12px_1px] box-sizing-border">
+                        <div class="m-[0_4.9px_3.8px_6px] flex w-[196.3px] h-[130.4px] box-sizing-border">
+                          <div class="bg-[url('../assets/images/adults_collaborate_collaboration_1036641.jpeg')] w-[196.3px] h-[130.4px]">
+                          </div>
+                        </div>
+                        <div class="m-[0_12.8px_1.8px_12.8px] inline-block self-start break-words font-['Nunito_Sans'] font-bold text-[12.1px] tracking-[0px] text-[#202224]">
+                        Mathematics
+                        </div>
+                        <div class="m-[0_12.8px_4.1px_12.8px] inline-block self-start break-words font-['Nunito_Sans'] font-semibold text-[10.5px] tracking-[0px] text-[#646464]">
+                        Algebraic expression
+                        </div>
+                        <div class="m-[0_12.8px_8.2px_12.8px] inline-block self-start break-words font-['Nunito_Sans'] font-semibold text-[10.5px] tracking-[0px] text-[#919191]">
+                        Today 01:50 PM
+                        </div>
+                        <img class="opacity-[0.649] w-[207.2px] h-[1.5px]" src="../assets/vectors/divider_9_x2.svg" />
+                      </div>
+                      <img class="shadow-[0px_0px_0px_0px_rgba(0,0,0,0.129)] absolute left-[0px] bottom-[86.5px] w-[14.3px] h-[10.5px]" src="../assets/vectors/triangle_3_x2.svg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

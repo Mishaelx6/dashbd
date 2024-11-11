@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen">
+
+    <!-- Mobile Header -->
+    <header class="md:hidden flex justify-between items-center p-4 bg-white shadow-md">
+        <div class="flex items-center">
+            <img src="https://mail.google.com/mail/u/0?ui=2&ik=f0c553c2f4&attid=0.1.1&permmsgid=msg-f:1807541722274417423&th=1915ad9ea0dd4b0f&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-64th_mHQF6eCRb9yQt1MxJ7BenUHi0XtCkZ68E4h6UGV2BEi0SeJMgQMjiqcK0UAIjMpbnIIElziQ3Km0YYZ7G9kUAj-XpfNDv6ZUzqnlvFer26TLK52JWys&disp=emb" alt="Dashboard Logo" class="max-w-[70px] max-h-[70px]" alt="Dashboard Logo" class="w-10 h-10">
+        </div>
+        <div>
+            <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                <i class="fa-solid fa-bars fa-2x"></i>
+            </button>
+        </div>
+    </header>
+
+        <!-- Icons and Profile Image -->
+       
+
+    <div class="flex h-full">
+        <!-- Sidebar -->
+        <div id="sidebar" class="hidden fixed md:flex w-[200px] bg-white text-gray-800 flex-col h-screen z-10">
+            <!-- Logo -->
+            <div class="hidden md:flex justify-center items-center p-4 mt-4">
+                <img src="https://mail.google.com/mail/u/0?ui=2&ik=f0c553c2f4&attid=0.1.1&permmsgid=msg-f:1807541722274417423&th=1915ad9ea0dd4b0f&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-64th_mHQF6eCRb9yQt1MxJ7BenUHi0XtCkZ68E4h6UGV2BEi0SeJMgQMjiqcK0UAIjMpbnIIElziQ3Km0YYZ7G9kUAj-XpfNDv6ZUzqnlvFer26TLK52JWys&disp=emb" alt="Dashboard Logo" class="max-w-[70px] max-h-[70px]">
+            </div>
+            <!-- Navigation Links -->
+            <nav class="flex-grow p-4">
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-tachometer-alt mr-3"></i> Dashboard
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-calendar-alt mr-3"></i> Timetable
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-bullhorn mr-3"></i> Notice board
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-dollar-sign mr-3"></i> School Fees
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-images mr-3"></i> Class Gallery
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-graduation-cap mr-3"></i> Academic Result
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-sign-out-alt mr-3"></i> Log out
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-8 flex-grow md:ml-[200px] flex flex-col">
+            <!-- Header for Desktop -->
+            <header class="flex  md:flex p-4 justify-between items-center ">
+                <div class="flex items-center">
+                    <div class="relative">
+                        <div class="flex items-center ml-[20px_0_0_0">
+                            <div class="relative w-full sm:w-auto">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+                                </span>
+                                <input type="text" placeholder="Search..." class="w-full sm:w-auto p-2 sm:p-1 pl-10 sm:pl-8 rounded border border-gray-300 focus:outline-none focus:border-indigo-500 sm:text-sm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icons and Profile Image -->
+                <div class="flex items-center space-x-4 ml-auto">
+                    <div class="relative">
+                        <i class="fa-regular fa-bell text-gray-600 cursor-pointer"></i>
+                        <span class="absolute top-0 right-0 block w-2.5 h-2.5 bg-red-500 rounded-full ring-2 ring-white"></span>
+                    </div>
+                    <i class="fa-regular fa-cog text-gray-600 cursor-pointer"></i>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 rounded-full overflow-hidden">
+                            <img src="https://via.placeholder.com/150" alt="Profile Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold">User Name</span>
+                            <span class="text-sm text-gray-600">example@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="rounded-lg bg-white relative mx-auto my-8 flex flex-col items-center p-6 w-full max-w-xl md:max-w-2xl lg:max-w-4xl box-sizing-border">
+                <div class="w-full text-center mb-12">
+                    <span class="block text-3xl font-bold text-[#310062]">#50,000</span>
+                    <div class="flex justify-center items-center my-4">
+                        <span class="text-2xl font-semibold text-[#0A0A0B]">3367920908375892</span>
+                        <img class="w-6 h-6 ml-2" src="../assets/vectors/icon_3_x2.svg" alt="Icon">
+                    </div>
+                    <span class="block text-2xl font-semibold text-[#000000]">ADAM’S MODEL SCHOOL</span>
+                    <span class="block text-2xl font-semibold text-[#000000] mt-2">MONIEPOINT</span>
+                </div>
+                <!-- Processing Button -->
+                <button class="shadow-xs rounded-lg border border-primary-600 bg-purple-600 flex items-center justify-center p-4 w-full max-w-sm text-white text-2xl font-medium">
+                    Processing
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

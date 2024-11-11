@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen">
+
+    <!-- Mobile Header -->
+    <header class="md:hidden flex justify-between items-center p-4 bg-white shadow-md">
+        <div class="flex items-center">
+            <img src="https://via.placeholder.com/70" alt="Dashboard Logo" class="w-10 h-10">
+        </div>
+        <div>
+            <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                <i class="fa-solid fa-bars fa-2x"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="flex h-full">
+        <!-- Sidebar -->
+        <div id="sidebar" class="hidden fixed md:flex w-[200px] bg-white text-gray-800 flex-col h-screen z-10">
+            <!-- Logo -->
+            <div class="hidden md:flex justify-center items-center p-4 mt-4">
+                <img src="https://mail.google.com/mail/u/0?ui=2&ik=f0c553c2f4&attid=0.1.1&permmsgid=msg-f:1807541722274417423&th=1915ad9ea0dd4b0f&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-64th_mHQF6eCRb9yQt1MxJ7BenUHi0XtCkZ68E4h6UGV2BEi0SeJMgQMjiqcK0UAIjMpbnIIElziQ3Km0YYZ7G9kUAj-XpfNDv6ZUzqnlvFer26TLK52JWys&disp=emb" alt="Dashboard Logo" class="max-w-[70px] max-h-[70px]">
+            </div>
+            <!-- Navigation Links -->
+            <nav class="flex-grow p-4">
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-tachometer-alt mr-3"></i> Dashboard
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-calendar-alt mr-3"></i> Timetable
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-bullhorn mr-3"></i> Notice board
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-dollar-sign mr-3"></i> School Fees
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-images mr-3"></i> Class Gallery
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-graduation-cap mr-3"></i> Academic Result
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-sign-out-alt mr-3"></i> Log out
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-8 flex-grow md:ml-[200px] flex flex-col">
+            <!-- Header for Desktop -->
+            <header class="flex  md:flex p-4 justify-between items-center ">
+                <div class="flex items-center">
+                    <div class="relative">
+                        <div class="flex items-center ml-[20px_0_0_0">
+                            <div class="relative w-full sm:w-auto">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+                                </span>
+                                <input type="text" placeholder="Search..." class="w-full sm:w-auto p-2 sm:p-1 pl-10 sm:pl-8 rounded border border-gray-300 focus:outline-none focus:border-indigo-500 sm:text-sm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icons and Profile Image -->
+                <div class="flex items-center space-x-4 ml-auto">
+                    <div class="relative">
+                        <i class="fa-regular fa-bell text-gray-600 cursor-pointer"></i>
+                        <span class="absolute top-0 right-0 block w-2.5 h-2.5 bg-red-500 rounded-full ring-2 ring-white"></span>
+                    </div>
+                    <i class="fa-regular fa-cog text-gray-600 cursor-pointer"></i>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 rounded-full overflow-hidden">
+                            <img src="https://via.placeholder.com/150" alt="Profile Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold">User Name</span>
+                            <span class="text-sm text-gray-600">example@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="rounded-[20px]  bg-[#FFFFFF] p-6 w-full md:max-w-[800px] ">
+                <div class="mb-4">
+                    <span class="font-['Nunito_Sans'] font-bold text-[24px] leading-[1.2] text-[#000000]">
+                        Choose
+                    </span>
+                </div>
+                <div class="mb-12">
+                    <span class="font-['Nunito_Sans'] font-normal text-[20px] leading-[1.2] text-[#000000]">
+                        Select the options below to search for result
+                    </span>
+                </div>
+                <div class="mb-8 space-y-10">
+                    <!-- Session Selector -->
+                    <div>
+                        <div class="mb-2 font-['Nunito_Sans'] font-semibold text-[20px] tracking-[-0.2px] leading-[1.1] text-[#1D2026]">
+                            Session
+                        </div>
+                        <div class="border border-gray-300 p-3 flex justify-between items-center w-full">
+                            <span class="text-[20px] text-[#8C94A3]">Choose session</span>
+                            <div class="w-4 h-4">
+                                <img class="w-full h-full" src="https://via.placeholder.com/10x5" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Term Selector -->
+                    <div>
+                        <div class="mb-2 font-['Nunito_Sans'] font-semibold text-[20px] tracking-[-0.2px] leading-[1.1] text-[#1D2026]">
+                            Term
+                        </div>
+                        <div class="border border-gray-300 p-3 flex justify-between items-center w-full">
+                            <span class="text-[20px] text-[#8C94A3]">Choose term</span>
+                            <div class="w-4 h-4">
+                                <img class="w-full h-full" src="https://via.placeholder.com/10x5" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Class Selector -->
+                    <div>
+                        <div class="mb-2 font-['Nunito_Sans'] font-semibold text-[20px] tracking-[-0.2px] leading-[1.1] text-[#1D2026]">
+                            Class
+                        </div>
+                        <div class="border border-gray-300 p-3 flex justify-between items-center w-full">
+                            <span class="text-[20px] text-[#8C94A3]">Choose class</span>
+                            <div class="w-4 h-4">
+                                <img class="w-full h-full" src="https://via.placeholder.com/10x5" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button -->
+                <div class="flex justify-end">
+                    <button class="bg-[#7D35C5] text-white font-['Inter'] font-medium text-[16px] py-3 px-6 rounded-lg shadow-md">
+                        See Result
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

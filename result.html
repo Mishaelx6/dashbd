@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen">
+
+    <div class="flex h-full">
+        <!-- Sidebar -->
+        <div class="w-50 bg-white text-gray-800 flex flex-col fixed h-screen">
+            <!-- Logo -->
+            <div class="flex justify-center items-center p-4 mt-4">
+                <img src="https://via.placeholder.com/70" alt="Dashboard Logo" class="max-w-[70px] max-h-[70px]">
+            </div>
+            <!-- Navigation Links -->
+            <nav class="flex-grow p-4 ml-9 mt-9">
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-tachometer-alt mr-3"></i> Dashboard
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-calendar-alt mr-3"></i> Timetable
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-bullhorn mr-3"></i> Notice board
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-dollar-sign mr-3"></i> School Fees
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors text-[#7D35C5]">
+                    <i class="fa-solid fa-images mr-3"></i> Class Gallery
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-graduation-cap mr-3"></i> Academic Result
+                </a>
+                <a href="#" class="text-sm flex items-center py-3 px-4 hover:text-[#7D35C5] transition-colors">
+                    <i class="fa-solid fa-sign-out-alt mr-3"></i> Log out
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-8 flex-grow ml-[200px] flex flex-col">
+            <!-- Header -->
+            <header class="p-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="relative">
+
+                        <div class="m-[5.5px_0_5.5px_0] flex box-sizing-border">
+                            <span class="break-words font-['Nunito_Sans'] font-[var(--new-project-22-desktop-body-feature-bold-font-weight,700)] text-[24px] leading-[var(--new-project-22-desktop-body-feature-bold-line-height,1.2)] text-[#000000]">
+                            Achedemic Result
+                            </span>
+                          </div>
+                    </div>
+                </div>
+
+                <!-- Icons and Profile Image -->
+                <div class="flex items-center space-x-4 ml-auto">
+                    <div class="relative">
+                        <i class="fa-regular fa-bell text-gray-600 cursor-pointer"></i>
+                        <span class="absolute top-0 right-0 block w-2.5 h-2.5 bg-red-500 rounded-full ring-2 ring-white"></span>
+                    </div>
+                    <i class="fa-regular fa-cog text-gray-600 cursor-pointer"></i>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 rounded-full overflow-hidden">
+                            <img src="https://via.placeholder.com/150" alt="Profile Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold">User Name</span>
+                            <span class="text-sm text-gray-600">example@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="relative m-0 m-b-2 flex p-0 p-b-72 box-sizing-border">
+                <div class="rounded-20 bg-white relative flex flex-col items-center p-41 p-b-378 box-sizing-border">
+                  <div class="m-0 m-b-42 flex flex-row w-fit box-sizing-border">
+                    <img class="m-0 m-r-19 m-b-3 w-135 h-138" src="../assets/images/rectangle_1067177.png" alt="School Logo">
+                    <div class="m-9 m-r-19.3 m-b-10 flex flex-col items-center box-sizing-border">
+                      <div class="m-0 m-r-25.9 m-b-16 flex flex-col items-center w-fit box-sizing-border">
+                        <h1 class="m-0 m-b-10 text-40 font-semibold text-black">Royal International School</h1>
+                        <p class="text-20 font-normal text-black">123 Happy Street Sunnyville, Funland 45678 Nigeria</p>
+                      </div>
+                      <h2 class="text-20 font-bold text-purple-700">Report sheet for 2021/202 Academic session / First Term</h2>
+                    </div>
+                    <img class="m-b-3 w-142 h-138" src="../assets/images/rectangle_3676.jpeg" alt="School Image">
+                  </div>
+              
+                  <div class="m-0 m-b-19 flex flex-col items-center w-843 box-sizing-border">
+                    <div class="relative m-0 m-b-16 flex p-0 p-r-28 w-843 h-57 box-sizing-border">
+                      <span class="text-20 font-bold text-black">Name of student :</span>
+                      <span class="text-20 font-normal text-black">James Bola</span>
+                      <span class="text-20 font-semibold text-black">Total number of school days :</span>
+                      <span class="text-20 font-normal text-black">112</span>
+                      </div>
+              
+                    <div class="border-b-[1px_solid_#ABABAB] m-0 m-b-27 flex flex-row justify-between p-8.5 p-r-2 w-843 box-sizing-border">
+                      </div>
+              
+                    <div class="relative m-0 m-b-4 flex box-sizing-border">
+                      </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</body>
+</html>
